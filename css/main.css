@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background: #d1d1d1;
+}
+.checkbox {
+  display: none;
+}
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.header-container {
+  width: 90%;
+  position: relative;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  width: 3rem;
+}
+.btn-label {
+  width: 2rem;
+  height: 1.4rem;
+}
+.header-button {
+  width: 2rem;
+  height: 0.2rem;
+  background: #000;
+  position: absolute;
+  top: 1.9rem;  
+  transition: all 0.2s;
+}
+.header-button::before,
+.header-button::after {
+  content: "";
+  width: 2rem;
+  height: 0.2rem;
+  background: #000;
+  position: absolute;
+  top: -0.6rem;
+  transition: all 0.2s;
+}
+.header-button::after {
+  top: 0.6rem;
+}
+.menu {
+  background: #d1d1d1;
+  width: 100%;
+  height: 10rem;
+  position: fixed;
+  z-index: 9;
+  top: -12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 2rem;
+  transition: all 0.5s;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin: 0.5rem;
+}
+a {
+  margin: 0 1rem;
+  color: #000;
+  text-decoration: none;
+}
+.checkbox:checked ~ .menu {
+  background: #fff;
+  top: 0rem;
+}
+.checkbox:checked + header .header-container label .header-button {
+  background: none;
+}
+.checkbox:checked + header .header-container label .header-button::before {
+  transform: rotate(35deg);
+  top: 0;
+}
+.checkbox:checked + header .header-container label .header-button::after {
+  transform: rotate(-35deg);
+  top: 0;
+}
